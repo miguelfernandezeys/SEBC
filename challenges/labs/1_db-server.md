@@ -5,7 +5,7 @@
  hostname
  ip-172-31-42-28.us-west-2.compute.internal
 ```
-* Databases availables
+* Available databases
 ```
 show databases;
 +--------------------+
@@ -26,4 +26,13 @@ show databases;
 | sqoop              |
 +--------------------+
 ```
-
+* Server version
+```
+MariaDB [(none)]> select VERSION();
++----------------+
+| VERSION()      |
++----------------+
+| 5.5.52-MariaDB |
++----------------+
+1 row in set (0.00 sec)
+```
