@@ -6,8 +6,8 @@
  ip-172-31-42-28.us-west-2.compute.internal
 ```
 * Databases availables
-show databases;
 ```
+show databases;
 +--------------------+
 | Database           |
 +--------------------+
