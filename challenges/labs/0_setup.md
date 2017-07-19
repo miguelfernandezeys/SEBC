@@ -1,6 +1,8 @@
 # Challenge setup
+
 * Cloud Provider 
 AWS
+
 *Máquinas implementadas
 
 172.31.34.86    ip-172-31-34-86.us-west-2.compute.internal
