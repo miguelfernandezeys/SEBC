@@ -1,5 +1,8 @@
-### Cloud Provider = AWS###
-###máquinas implementadas###
+### Cloud Provider 
+AWS
+
+*Máquinas implementadas
+
 172.31.34.86    ip-172-31-34-86.us-west-2.compute.internal
 172.31.44.49    ip-172-31-44-49.us-west-2.compute.internal
 172.31.39.114   ip-172-31-39-114.us-west-2.compute.internal
