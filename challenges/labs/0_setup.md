@@ -49,11 +49,15 @@ repolist: 11,910
 sudo groupadd comets
 sudo groupadd planets
 ```
+* Users add 
+```
 sudo useradd -u 2800 -g comets haley
 password haley
 sudo useradd -u 2900 -g planets saturn
 password saturn
-###listar usuarios###
+```
+* Users list
+```
 cat /etc/passwd
 nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
 postfix:x:89:89::/var/spool/postfix:/sbin/nologin
@@ -64,8 +68,10 @@ ntp:x:38:38::/etc/ntp:/sbin/nologin
 nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
 saturn:x:2900:1002::/home/saturn:/bin/bash
 haley:x:2800:1001::/home/haley:/bin/bash
-### listar group###
-cd /etc/group
+```
+* Group list
+```
+cat /etc/group
 postfix:x:89:
 sshd:x:74:
 chrony:x:994:
@@ -74,7 +80,10 @@ ntp:x:38:
 nscd:x:28:
 comets:x:1001:
 planets:x:1002:
-###listar passwords###
+```
+* Passwords list
+
+```
 sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
 chrony:x:997:994::/var/lib/chrony:/sbin/nologin
 centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
@@ -82,7 +91,7 @@ ntp:x:38:38::/etc/ntp:/sbin/nologin
 nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
 haley:x:2800:1001::/home/haley:/bin/bash
 saturn:x:2900:1002::/home/saturn:/bin/bash
-
+```
 
 
 
