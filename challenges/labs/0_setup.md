@@ -3,17 +3,21 @@
 * Cloud Provider 
 AWS
 
-*Máquinas implementadas
+*  Instances - IP address and DNS name
 
 172.31.34.86    ip-172-31-34-86.us-west-2.compute.internal
 172.31.44.49    ip-172-31-44-49.us-west-2.compute.internal
 172.31.39.114   ip-172-31-39-114.us-west-2.compute.internal
 172.31.42.241   ip-172-31-42-241.us-west-2.compute.internal
 172.31.34.127   ip-172-31-34-127.us-west-2.compute.internal
-###Linux release###
+
+* Linux release
+
 cat /etc/redhat-release
 CentOS Linux release 7.3.1611 (Core)
-###File system capacity###
+
+* File system capacity
+
  df -h
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/xvda1       30G  1.5G   29G   5% /
@@ -25,7 +29,9 @@ tmpfs           7.2G     0  7.2G   0% /sys/fs/cgroup
 tmpfs           1.5G     0  1.5G   0% /run/user/1000
 tmpfs           1.5G     0  1.5G   0% /run/user/0
 /dev/xvdc        37G   49M   35G   1% /data0
-###Repos list###
+
+* Repos list
+
 yum repolist enabled
 Loaded plugins: fastestmirror
 Determining fastest mirrors
@@ -37,7 +43,8 @@ base/7/x86_64                       CentOS-7 - Base                       9,363
 extras/7/x86_64                     CentOS-7 - Extras                       447
 updates/7/x86_64                    CentOS-7 - Updates                    2,100
 repolist: 11,910
-###creacion de grupos###
+
+* Creacion de grupos
 sudo groupadd comets
 sudo groupadd planets
 sudo useradd -u 2800 -g comets haley
