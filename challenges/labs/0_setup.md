@@ -4,13 +4,13 @@
 AWS
 
 *  Instances - IP address and DNS name
-<tag>
+´´´
  172.31.34.86    ip-172-31-34-86.us-west-2.compute.internal
  172.31.44.49    ip-172-31-44-49.us-west-2.compute.internal
  172.31.39.114   ip-172-31-39-114.us-west-2.compute.internal
  172.31.42.241   ip-172-31-42-241.us-west-2.compute.internal
  172.31.34.127   ip-172-31-34-127.us-west-2.compute.internal
-</tag>
+´´´
 * Linux release
 
 cat /etc/redhat-release
