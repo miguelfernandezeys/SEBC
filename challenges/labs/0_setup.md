@@ -44,9 +44,11 @@ extras/7/x86_64                     CentOS-7 - Extras                       447
 updates/7/x86_64                    CentOS-7 - Updates                    2,100
 repolist: 11,910
 ```
-* Creacion de grupos
+* User's groups
+```
 sudo groupadd comets
 sudo groupadd planets
+```
 sudo useradd -u 2800 -g comets haley
 password haley
 sudo useradd -u 2900 -g planets saturn
