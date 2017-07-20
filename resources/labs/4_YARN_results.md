@@ -1,6 +1,9 @@
 [miguel@ip-172-31-47-166 ~]$ ./YARNtest.sh
+
 Testing loop started on Wed Jul 19 16:44:01 UTC 2017
+
 mappers:8
+
 reducers:1
 
 real    0m59.395s
