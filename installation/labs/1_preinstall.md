@@ -8,7 +8,7 @@
 [root@ip-172-31-47-166 ~]#sudo nano /etc/selinux/config
 selinux =disabled
 ```
--> Reboot instances and verify sestatus.
+ -> Reboot instances and verify sestatus.
 ```
 [centos@ip-172-31-47-166 ~]$ sestatus
 SELinux status:                 disabled
@@ -18,12 +18,12 @@ SELinux status:                 disabled
 [root@ip-172-31-34-127 ~]#vi /etc/sysctl.conf
 vm.swappiness = 1
 ```
-- Reboot instances and verify swappiness.
+ -> Reboot instances and verify swappiness.
 ```
 [root@ip-172-31-47-166 ~]#cat /proc/sys/vm/swappiness
 1
 ```
-* Mount volumen
+ -> Mount volumen
 ```
 sudo mkdir /data0
 sudo mkfs -t ext3 /dev/xvdc 
@@ -134,24 +134,24 @@ baseurl = http://yum.mariadb.org/10.0/rhel7-amd64
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
-- Update repos
+ -> Update repos
 ```
 [centos@ip-172-31-47-166 ~]$ yum repolist
 ```
-- Install MariaDB-server and MariaDB-client
+ -> Install MariaDB-server and MariaDB-client
 ```
 [centos@ip-172-31-47-166 ~]$ sudo yum install MariaDB-server MariaDB-client
 ```
--Enable and Start MariaDB
+ -> Enable and Start MariaDB
 ```
 [centos@ip-172-31-47-166 ~]$ sudo systemctl enable mysql
 [centos@ip-172-31-47-166 ~]$sudo systemctl start mysql
 ```
-- Execute MariaDB setting
+ -> Execute MariaDB setting
 ```
 [centos@ip-172-31-47-166 ~]$ sudo mysql_secure_installation
 ```
-- Set up databases
+ -> Set up databases
 ```
 create database scm DEFAULT CHARACTER SET utf8;
 create user 'scm'@'localhost' IDENTIFIED BY 'scm';
@@ -195,7 +195,7 @@ create user 'sqoop'@'localhost' IDENTIFIED BY 'sqoop';
 grant all privileges on sqoop.* to 'sqoop'@'localhost' identified by 'sqoop';
 grant all privileges on sqoop.* to 'sqoop'@'%' identified by 'sqoop';
 ```
-- Show databases
+ -> Show databases
 ```MariaDB [(none)]> show databases;
 +--------------------+
 | Database           |
