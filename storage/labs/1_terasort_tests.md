@@ -1,5 +1,5 @@
 # Storage lab
-* **create end-user Linux account in all nodes.**
+* **Create end-user Linux account in all nodes.**
 
 ```
 sudo groupadd miguel
@@ -54,7 +54,9 @@ hadoop jar hadoop-mapreduce-examples-2.6.0-cdh5.11.1.jar terasort -Ddfs.blocksiz
 time terasort
 time hadoop jar hadoop-mapreduce-examples-2.6.0-cdh5.11.1.jar terasort -Ddfs.blocksize=32M -Dmapred.map.tasks=4  /user/miguel/output /user/miguel/output2
 ````
+
 * **Time terasort**
+
 ```
 real    7m1.920s
 user    0m8.093s
