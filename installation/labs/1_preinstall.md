@@ -234,6 +234,7 @@ OpenJDK 64-Bit Server VM (build 24.141-b02, mixed mode)
 [centos@ip-172-31-47-166 ~]$ sudo cp mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar /usr/share/java/mysql-connector-java.jar
 ```
 -> Agents
+
  *Create directory /user/share/java/*
 ```
  mkdir /user/share/java
