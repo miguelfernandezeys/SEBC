@@ -1,9 +1,9 @@
 # Pre-installation process
-* Update system.
+* **Update system.**
 ```
 [root@ip-172-31-47-166 ~]# yum update
 ```
-* Selinux disabled.
+* **Selinux disabled.**
 ```
 [root@ip-172-31-47-166 ~]#sudo nano /etc/selinux/config
 selinux =disabled
@@ -13,7 +13,7 @@ selinux =disabled
 [centos@ip-172-31-47-166 ~]$ sestatus
 SELinux status:                 disabled
 ```
-* Check vm.swappiness.
+* **Check vm.swappiness.**
 ```
 [root@ip-172-31-34-127 ~]#vi /etc/sysctl.conf
 vm.swappiness = 1
@@ -23,7 +23,7 @@ vm.swappiness = 1
 [root@ip-172-31-47-166 ~]#cat /proc/sys/vm/swappiness
 1
 ```
- -> Mount volumen
+* **Mount volumen**
 ```
 sudo mkdir /data0
 sudo mkfs -t ext3 /dev/xvdc 
@@ -44,7 +44,7 @@ tmpfs           1.5G     0  1.5G   0% /run/user/1000
 
 echo "/dev/xvdc /data0 ext3 noatime 0 0"  | sudo tee -a /etc/fstab
 ```
-* Disable transparent hugepage 
+* **Disable transparent hugepage** 
 ```
 echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 echo "never" > /sys/kernel/mm/transparent_hugepage/enabled
@@ -52,7 +52,7 @@ vi /etc/rc.local
 echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 echo "never" > /sys/kernel/mm/transparent_hugepage/enabled
 ```
-* Network interface configuration
+* **Network interface configuration**
 ```
 [centos@ip-172-31-47-166 ~]$ ifconfig
 eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
@@ -64,7 +64,7 @@ eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
         TX packets 1078  bytes 84208 (82.2 KiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
-* Forward and reverse host lookups
+* **Forward and reverse host lookups**
 ```
 [centos@ip-172-31-47-166 ~]$ host 172.31.47.166
 [centos@ip-172-31-47-166 ~]$ 166.47.31.172.in-addr.arpa domain name pointer ip-172-31-47-166.us-west-2.compute.internal.
@@ -77,7 +77,7 @@ eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
 172.31.32.37    ip-172-31-32-37.us-west-2.compute.internal
 172.31.37.171   ip-172-31-37-171.us-west-2.compute.internal
 ```
-* Nscd status
+* **Nscd status**
 ```
 [centos@ip-172-31-47-166 ~]$ sudo systemctl status nscd
 ● nscd.service - Name Service Cache Daemon
@@ -100,7 +100,7 @@ Jul 20 17:50:04 ip-172-31-47-166.us-west-2.compute.internal nscd[12872]: 1287...
 Jul 20 17:50:04 ip-172-31-47-166.us-west-2.compute.internal systemd[1]: Start...
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
-* Ntp status
+* **Ntp status**
 ```
 [centos@ip-172-31-47-166 ~]$ sudo systemctl status ntpd
 ● ntpd.service - Network Time Service
@@ -123,7 +123,7 @@ Jul 20 17:52:55 ip-172-31-47-166.us-west-2.compute.internal ntpd[13260]: 0.0....
 Jul 20 17:52:55 ip-172-31-47-166.us-west-2.compute.internal ntpd[13260]: 0.0....
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
-* Install MariaDB 
+* **Install MariaDB**
 ```
 [centos@ip-172-31-47-166 ~]$ sudo vi /etc/yum.repos.d/MariaDB.repo
 # MariaDB 10.0 RedHat repository list - created 2017-07-18 16:15 UTC
@@ -216,7 +216,7 @@ grant all privileges on sqoop.* to 'sqoop'@'%' identified by 'sqoop';
 +--------------------+
 13 rows in set (0.13 sec)
 ```
-* Install Java 
+* **Install Java** 
  -> Server
 ```
 [centos@ip-172-31-47-166 ~]$ sudo yum install java-1.7.0-openjdk
@@ -226,7 +226,7 @@ java version "1.7.0_141"
 OpenJDK Runtime Environment (rhel-2.6.10.1.el7_3-x86_64 u141-b02)
 OpenJDK 64-Bit Server VM (build 24.141-b02, mixed mode)
 ```
-* JDBC 
+* **JDBC** 
 -> Server
 ```
 [centos@ip-172-31-47-166 ~]$ sudo wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.42.tar.gz
@@ -234,12 +234,12 @@ OpenJDK 64-Bit Server VM (build 24.141-b02, mixed mode)
 [centos@ip-172-31-47-166 ~]$ sudo cp mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar /usr/share/java/mysql-connector-java.jar
 ```
 -> Agents
- Create directory /user/share/java/
+ *Create directory /user/share/java/*
 ```
  mkdir /user/share/java
  sudo cp mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar /usr/share/java/mysql-connector-java.jar
 ```
-* Install Cloudera manager server and agents
+* **Install Cloudera manager server and agents**
  -> Create repo Cloudera.
 ```
 vi /etc/yum.repo.d Cloudera.repo
@@ -254,20 +254,20 @@ gpgcheck = 1
 ```
 yum repolist
 ```
-->Install Cloudera server - First node.
+-> Install Cloudera server - First node.
 ```
 sudo yum install cloudera-manager-daemons cloudera-manager-server 
 ```
--Install Cloudera agent - All nodes
+-> Install Cloudera agent - All nodes
 ```
 sudo yum install cloudera-manager-daemons cloudera-manager-agent
 ```
-* Prepare databases
+* **Prepare databases**
 ```
 [centos@ip-172-31-47-166 ~]$ cd /usr/share/cmf/schema
 [centos@ip-172-31-47-166 ~]$ sudo ./scm_prepare_database.sh mysql scm scm scm  
 ```
-* Start cloudera-scm-server and cloudera-scm-agent
+* **Start cloudera-scm-server and cloudera-scm-agent**
 ```
 sudo service cloudera-scm-server enable
 sudo service cloudera-scm-server start
