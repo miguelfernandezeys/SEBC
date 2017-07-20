@@ -1,5 +1,6 @@
 [miguel@ip-172-31-47-166 ~]$ ./YARNtest.sh
 
+```
 Testing loop started on Wed Jul 19 16:44:01 UTC 2017
 
 mappers:8
@@ -28,3 +29,4 @@ Deleted /user/miguel/results/tg-10GB-8-1-1024
 Deleted /user/miguel/results/ts-10GB-8-1-1024
 Testing loop ended on Wed Jul 19 17:14:24 UTC 2017
 
+```
