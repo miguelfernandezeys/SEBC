@@ -217,7 +217,8 @@ grant all privileges on sqoop.* to 'sqoop'@'%' identified by 'sqoop';
 13 rows in set (0.13 sec)
 ```
 * **Install Java** 
- -> Server
+
+-> Server
 ```
 [centos@ip-172-31-47-166 ~]$ sudo yum install java-1.7.0-openjdk
 -Java version
