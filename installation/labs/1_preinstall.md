@@ -227,6 +227,7 @@ OpenJDK Runtime Environment (rhel-2.6.10.1.el7_3-x86_64 u141-b02)
 OpenJDK 64-Bit Server VM (build 24.141-b02, mixed mode)
 ```
 * **JDBC** 
+
 -> Server
 ```
 [centos@ip-172-31-47-166 ~]$ sudo wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.42.tar.gz
