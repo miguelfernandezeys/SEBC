@@ -217,7 +217,7 @@ grant all privileges on sqoop.* to 'sqoop'@'%' identified by 'sqoop';
 13 rows in set (0.13 sec)
 ```
 * Install Java 
- - Server
+ -> Server
 ```
 [centos@ip-172-31-47-166 ~]$ sudo yum install java-1.7.0-openjdk
 -Java version
@@ -227,6 +227,56 @@ OpenJDK Runtime Environment (rhel-2.6.10.1.el7_3-x86_64 u141-b02)
 OpenJDK 64-Bit Server VM (build 24.141-b02, mixed mode)
 ```
 * JDBC 
+-> Server
+```
+[centos@ip-172-31-47-166 ~]$ sudo wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.42.tar.gz
+[centos@ip-172-31-47-166 ~]$ tar zxvf mysql-connector-java-5.1.42.tar.gz
+[centos@ip-172-31-47-166 ~]$ sudo cp mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar /usr/share/java/mysql-connector-java.jar
+```
+-> Agents
+ Create directory /user/share/java/
+```
+ mkdir /user/share/java
+ sudo cp mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar /usr/share/java/mysql-connector-java.jar
+```
+* Install Cloudera manager server and agents
+ -> Create repo Cloudera.
+```
+vi /etc/yum.repo.d Cloudera.repo
+[cloudera-manager]
+# Packages for Cloudera Manager, Version 5, on RedHat or CentOS 7 x86_64           	  
+name=Cloudera Manager
+baseurl=https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/511.1/
+gpgkey =https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera    
+gpgcheck = 1
+```
+ -> Update repo.
+```
+yum repolist
+```
+->Install Cloudera server - First node.
+```
+sudo yum install cloudera-manager-daemons cloudera-manager-server 
+```
+-Install Cloudera agent - All nodes
+```
+sudo yum install cloudera-manager-daemons cloudera-manager-agent
+```
+* Prepare databases
+```
+[centos@ip-172-31-47-166 ~]$ cd /usr/share/cmf/schema
+[centos@ip-172-31-47-166 ~]$ sudo ./scm_prepare_database.sh mysql scm scm scm  
+```
+* Start cloudera-scm-server and cloudera-scm-agent
+```
+sudo service cloudera-scm-server enable
+sudo service cloudera-scm-server start
+sudo service cloudera-scm-server status
+sudo service cloudera-scm-agent enable
+sudo service cloudera-scm-agent-start
+```
+
+
 
 
 
