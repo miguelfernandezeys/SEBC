@@ -8,7 +8,7 @@
 [root@ip-172-31-47-166 ~]#sudo nano /etc/selinux/config
 selinux =disabled
 ```
-- Reboot instances and verify sestatus.
+-> Reboot instances and verify sestatus.
 ```
 [centos@ip-172-31-47-166 ~]$ sestatus
 SELinux status:                 disabled
