@@ -75,7 +75,7 @@ drwxr-xr-x   - haley  haley           0 2017-07-21 17:20 /user/saturn
   } ]
 }
 ```
-* **Output /api/v8/clusters/miguelfernandezeys/services
+* **Output /api/v8/clusters/miguelfernandezeys/services**
 ```
 {
   "items" : [ {
