@@ -1,9 +1,8 @@
 * /etc/yum.repos.d
 ```
-ls /etc/yum.repos.d/
-CentOS-Base.repo       CentOS-fasttrack.repo  CentOS-Vault.repo
-CentOS-CR.repo         CentOS-Media.repo      cloudera-manager.repo
-CentOS-Debuginfo.repo  CentOS-Sources.repo 
+[centos@ip-172-31-44-71 yum.repos.d]$ ls /etc/yum.repos.d
+CentOS-Base.repo  CentOS-Debuginfo.repo  CentOS-Media.repo    CentOS-Vault.repo
+CentOS-CR.repo    CentOS-fasttrack.repo  CentOS-Sources.repo  Cloudera.repo
 ```
 * Prepare script 
  ```
