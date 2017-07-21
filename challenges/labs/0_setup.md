@@ -5,11 +5,11 @@ AWS
 
 *  Instances - IP address and DNS name
 ```
+172.31.44.71      ip-172-31-44-71.us-west-2.compute.internal
 172.31.33.125       ip-172-31-33-125.us-west-2.compute.internal
 172.31.36.134       ip-172-31-36-134.us-west-2.compute.internal
 172.31.33.133      ip-172-31-33-133.us-west-2.compute.internal
 172.31.42.29      ip-172-31-42-29.us-west-2.compute.internal
-172.31.44.71      ip-172-31-44-71.us-west-2.compute.internal
 ```
 * Linux release
 ```
